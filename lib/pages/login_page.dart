@@ -1,7 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
+import 'package:hotel_seat_booking/widgets/circle_avatar.dart';
+import 'package:hotel_seat_booking/widgets/text_field_widget.dart';
+import 'package:hotel_seat_booking/widgets/text_widget.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -15,8 +20,8 @@ class LoginPage extends StatelessWidget {
       // child: Text('Login'),
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(
-            'https://img.xcitefun.net/users/2015/01/382649,xcitefun-philippines-tour-2.jpg',
+          image: AssetImage(
+            'assets/img.png',
           ),
           fit: BoxFit.fill,
         ),
@@ -30,8 +35,8 @@ class LoginPage extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xFFffffff).withAlpha(55),
-              Color(0xFFffffff).withAlpha(45),
+              Color(0xFFffffff).withAlpha(10),
+              Color(0xFFffffff).withAlpha(10),
             ],
             stops: [
               0.3,
@@ -39,7 +44,7 @@ class LoginPage extends StatelessWidget {
             ],
           ),
           border: 2,
-          blur: 7,
+          blur: 1,
           borderGradient: LinearGradient(
             begin: Alignment.bottomRight,
             end: Alignment.topLeft,
@@ -51,57 +56,53 @@ class LoginPage extends StatelessWidget {
             stops: [0.06, 0.95, 1],
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextField(
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(.8),
-                    fontSize: 14,
-                  ),
-                  decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white70),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    TextWidget(
+                      data: 'Sign up',
+                      fontColor: Colors.white70,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
                     ),
-                    prefixIcon: Icon(
-                      Icons.email,
-                      color: Colors.white.withOpacity(.8),
-                      size: 20,
-                    ),
-                    prefixIconConstraints: BoxConstraints(
-                      minWidth: 35,
-                    ),
-                    hintText: 'Enter Your email',
-                    hintStyle: TextStyle(
-                      color: Colors.white60,
-                      fontSize: 14,
-                    ),
-                  ),
+                  ],
                 ),
-                TextField(
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(.8),
-                    fontSize: 14,
-                  ),
-                  decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white70),
-                    ),
-                    prefixIcon: Icon(
-                      Icons.lock,
-                      color: Colors.white.withOpacity(.8),
-                      size: 20,
-                    ),
-                    prefixIconConstraints: BoxConstraints(
-                      minWidth: 35,
-                    ),
-                    hintText: 'Enter Your password',
-                    hintStyle: TextStyle(
-                      color: Colors.white60,
-                      fontSize: 14,
-                    ),
-                  ),
+                SizedBox(
+                  height: 15,
+                ),
+                TextWidget(
+                  data: 'Never eat More than you can life',
+                  fontColor: Colors.white70,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+                SizedBox(height: 25,),
+                TextFieldWidget(
+                  hintText: 'Enter Your Email',
+                  icons: Icons.email,
+                  obscureText: false,
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                TextFieldWidget(
+                  hintText: 'Enter Your Number',
+                  icons: Icons.phone,
+                  obscureText: false,
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                TextFieldWidget(
+                  hintText: 'Enter Your Password',
+                  icons: Icons.lock,
+                  obscureText: true,
+                  suffixIcon: Icons.visibility_off,
                 ),
                 SizedBox(
                   height: 12,
@@ -118,7 +119,9 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 12,),
+                SizedBox(
+                  height: 12,
+                ),
                 Container(
                   height: 45,
                   width: 320,
@@ -136,6 +139,80 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextWidget(
+                      data: 'Already A Member..!   ',
+                      fontColor: Colors.white70,
+                      fontSize: 15,
+                    ),
+                    TextWidget(
+                      data: 'Sign Up',
+                      fontSize: 15,
+                      fontColor: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Flexible(
+                      child: Container(
+                        height: 1,
+                        color: Colors.white70,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    TextWidget(
+                      data: 'OR',
+                      fontColor: Colors.white,
+                      fontSize: 15,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Flexible(
+                      child: Container(
+                        color: Colors.white70,
+                        height: 1,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CircleAvatarWidget(
+                      backgroundColor: Colors.black,
+                      imagelogo: 'assets/icons/google-logo.png',
+                      radius: 20,
+                    ),
+                    CircleAvatarWidget(
+                      backgroundColor: Colors.white,
+                      radius: 20,
+                      imagelogo: 'assets/icons/facebook-logo.png',
+                    ),
+                    CircleAvatarWidget(
+                      backgroundColor: Colors.white,
+                      radius: 20,
+                      imagelogo: 'assets/icons/apple-logo.png',
+                    ),
+                  ],
+                )
               ],
             ),
           ),
