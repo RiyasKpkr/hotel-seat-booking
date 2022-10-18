@@ -1,10 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:hotel_seat_booking/pages/login_page.dart';
+import 'package:hotel_seat_booking/screens/sign_up_screen.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+   Homepage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +18,18 @@ class Homepage extends StatelessWidget {
           actions: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.exit_to_app),
+              child: Image.asset(
+                'assets/icons/restarant-logo.jpg',
+                color: Colors.white,
+              ),
             )
           ],
         ),
         resizeToAvoidBottomInset: false,
-        body: LoginPage(),
+        body: SignUpScreen(),
       ),
     );
   }
+
+  bool sign= false;
 }

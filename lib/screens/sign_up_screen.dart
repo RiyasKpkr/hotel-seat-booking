@@ -1,23 +1,21 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
+import 'package:hotel_seat_booking/screens/login_screen.dart';
 import 'package:hotel_seat_booking/widgets/circle_avatar.dart';
 import 'package:hotel_seat_booking/widgets/text_field_widget.dart';
 import 'package:hotel_seat_booking/widgets/text_widget.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class SignUpScreen extends StatelessWidget {
+   SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      // color: Colors.amber,
-      // child: Text('Login'),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
@@ -43,7 +41,7 @@ class LoginPage extends StatelessWidget {
               1,
             ],
           ),
-          border: 2,
+          border: 1,
           blur: 1,
           borderGradient: LinearGradient(
             begin: Alignment.bottomRight,
@@ -81,19 +79,23 @@ class LoginPage extends StatelessWidget {
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
-                SizedBox(height: 25,),
+                SizedBox(
+                  height: 25,
+                ),
                 TextFieldWidget(
+                  obscureText: false,
                   hintText: 'Enter Your Email',
                   icons: Icons.email,
-                  obscureText: false,
+                  // obscureText: false,
                 ),
                 SizedBox(
                   height: 5,
                 ),
                 TextFieldWidget(
+                  obscureText: false,
                   hintText: 'Enter Your Number',
                   icons: Icons.phone,
-                  obscureText: false,
+                  // obscureText: false,
                 ),
                 SizedBox(
                   height: 5,
@@ -107,18 +109,6 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   height: 12,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Forget password',
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(.8),
-                        fontSize: 15,
-                      ),
-                    ),
-                  ],
-                ),
                 SizedBox(
                   height: 12,
                 ),
@@ -131,7 +121,7 @@ class LoginPage extends StatelessWidget {
                     border: Border.all(color: Colors.white70),
                   ),
                   child: Text(
-                    'Sign IN',
+                    'Sign up',
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.white.withOpacity(.8),
@@ -150,11 +140,24 @@ class LoginPage extends StatelessWidget {
                       fontColor: Colors.white70,
                       fontSize: 15,
                     ),
-                    TextWidget(
-                      data: 'Sign Up',
-                      fontSize: 15,
-                      fontColor: Colors.white,
-                      fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: () {
+                        print('object');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return LoginScreen();
+                            },
+                          ),
+                        );
+                      },
+                      child: TextWidget(
+                        data: 'Login',
+                        fontSize: 15,
+                        fontColor: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
@@ -197,17 +200,17 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     CircleAvatarWidget(
-                      backgroundColor: Colors.black,
+                      backgroundColor: Colors.white70,
                       imagelogo: 'assets/icons/google-logo.png',
                       radius: 20,
                     ),
                     CircleAvatarWidget(
-                      backgroundColor: Colors.white,
+                      backgroundColor: Colors.white70,
                       radius: 20,
                       imagelogo: 'assets/icons/facebook-logo.png',
                     ),
                     CircleAvatarWidget(
-                      backgroundColor: Colors.white,
+                      backgroundColor: Colors.white70,
                       radius: 20,
                       imagelogo: 'assets/icons/apple-logo.png',
                     ),
