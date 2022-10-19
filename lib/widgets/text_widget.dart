@@ -7,12 +7,14 @@ class TextWidget extends StatelessWidget {
   double fontSize;
   Color fontColor;
   FontWeight? fontWeight;
+  // List? shadows;
    TextWidget({
     Key? key,
     required this.data,
     required this.fontColor,
     required this.fontSize,
      this.fontWeight,
+    //  this.shadows,
   }) : super(key: key);
 
   @override

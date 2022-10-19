@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:hotel_seat_booking/screens/restaurants_login_screen.dart';
 import 'package:hotel_seat_booking/screens/sign_up_screen.dart';
 
 class Homepage extends StatelessWidget {
-   Homepage({super.key});
-
+  Homepage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +18,16 @@ class Homepage extends StatelessWidget {
           actions: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.asset(
-                'assets/icons/restarant-logo.jpg',
-                color: Colors.white,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return RestaurantsLoginScreen();
+                  }));
+                },
+                child: Image.asset(
+                  'assets/icons/restarant-logo.jpg',
+                  color: Colors.white,
+                ),
               ),
             )
           ],
@@ -31,5 +38,5 @@ class Homepage extends StatelessWidget {
     );
   }
 
-  bool sign= false;
+  // bool sign= false;
 }

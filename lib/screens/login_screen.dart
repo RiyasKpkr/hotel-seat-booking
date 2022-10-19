@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 import 'package:hotel_seat_booking/screens/sign_up_screen.dart';
+import 'package:hotel_seat_booking/screens/User/user_home_screen.dart';
 import 'package:hotel_seat_booking/widgets/circle_avatar.dart';
 import 'package:hotel_seat_booking/widgets/text_field_widget.dart';
 import 'package:hotel_seat_booking/widgets/text_widget.dart';
@@ -112,12 +113,20 @@ class LoginScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(60),
                         border: Border.all(color: Colors.white70),
                       ),
-                      child: Text(
-                        'LogIn',
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white.withOpacity(.8),
-                          fontWeight: FontWeight.w500,
+                      child: GestureDetector(
+                        onTap: () {
+                          print('objectsdfdfs');
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return userHomePage();
+                          }));
+                        },
+                        child: Text(
+                          'LogIn',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.white.withOpacity(.8),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     ),
