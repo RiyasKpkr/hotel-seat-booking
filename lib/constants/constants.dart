@@ -2,7 +2,7 @@ import 'package:hotel_seat_booking/models/food_model.dart';
 import 'package:hotel_seat_booking/models/hotel_model.dart';
 
 class Constants {
-  List<Hotel> res = [
+ static List<Hotel> res = [
     Hotel(
       hotelLocation: 'Calicut',
       hotelMobileNumber: 9898989898,
