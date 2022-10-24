@@ -1,5 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:hotel_seat_booking/constants/constants.dart';
 import 'package:hotel_seat_booking/models/hotel_model.dart';
@@ -43,7 +45,7 @@ class _userHomePageState extends State<userHomePage> {
                       enabledBorder: InputBorder.none,
                       errorBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
-                      hintText: 'Search',
+                      hintText: 'Search Hotel',
                       suffixIcon: Icon(
                         Icons.search,
                         color: Colors.grey.shade100,
@@ -56,9 +58,9 @@ class _userHomePageState extends State<userHomePage> {
                           child: Text(e.hotelName),
                         ),
                         e.hotelName,
-                        item: e
-                      ).toList(),
-                    ),
+                        item: e,
+                      ),
+                    ).toList(),
                   ),
                 ),
               ),
