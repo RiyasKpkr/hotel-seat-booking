@@ -25,7 +25,7 @@ class CardWidget extends StatelessWidget {
       ),
       shadowColor: Colors.black,
       color: Colors.greenAccent[300],
-      child: SizedBox(
+      child: Container(
         height: 275,
         width: 225,
         child: Stack(
@@ -45,7 +45,7 @@ class CardWidget extends StatelessWidget {
                     child: TextWidget(
                       data: hotelName,
                       fontColor: Colors.black,
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_seat_booking/home_page.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }

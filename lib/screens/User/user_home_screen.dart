@@ -1,6 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
-import 'dart:math';
+// import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:hotel_seat_booking/constants/constants.dart';
@@ -51,16 +51,18 @@ class _userHomePageState extends State<userHomePage> {
                         color: Colors.grey.shade100,
                       ),
                     ),
-                    suggestions: Constants.res.map(
-                      (e) => SearchFieldListItem(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 8),
-                          child: Text(e.hotelName),
-                        ),
-                        e.hotelName,
-                        item: e,
-                      ),
-                    ).toList(),
+                    suggestions: Constants.res
+                        .map(
+                          (e) => SearchFieldListItem(
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 8),
+                              child: Text(e.hotelName),
+                            ),
+                            e.hotelName,
+                            item: e,
+                          ),
+                        )
+                        .toList(),
                   ),
                 ),
               ),
@@ -83,11 +85,7 @@ class _userHomePageState extends State<userHomePage> {
                   ),
                 ],
               ),
-              Row(
-                children: [
-                  CardView(),
-                ],
-              )
+              CardView()
             ],
           ),
         ),
