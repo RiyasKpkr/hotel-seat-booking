@@ -4,7 +4,7 @@ import 'package:hotel_seat_booking/models/hotel_model.dart';
 class Constants {
  static List<Hotel> res = [
     Hotel(
-      hotelLocation: 'Calicut',
+      hotelLocation: 'malappuram',
       hotelMobileNumber: 9898989898,
       hotelName: 'Sagar',
       hotelRating: 4.4,
