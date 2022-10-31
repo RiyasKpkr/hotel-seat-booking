@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+
 
 import 'package:flutter/material.dart';
 import 'package:hotel_seat_booking/constants/constants.dart';
@@ -31,14 +31,18 @@ class _CardViewState extends State<CardView> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return SeatBookingScreen(hotelName: '${Constants.res[index].hotelName}',);
+                        return SeatBookingScreen(
+                          hotelName: '${Constants.res[index].hotelName}',
+                          hotelImage: 'assets/hotel.jpg',
+                          ratingCount: Constants.res[index].hotelRating??0,
+                        );
                       },
                     ),
                   );
                 },
                 child: CardWidget(
                   imagePath: 'assets/hotel.jpg',
-                  rating: '3.3',
+                  rating: Constants.res[index].hotelRating??0,
                   hotelName: '${Constants.res[index].hotelName}',
                   foodItems: 'food List',
                   locationName: '${Constants.res[index].hotelLocation}',

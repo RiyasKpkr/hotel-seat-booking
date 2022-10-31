@@ -33,6 +33,7 @@ class Constants {
       hotelName: 'rahamat',
       hotelLocation: 'Calicut',
       hotelMobileNumber: 1212121212,
+      hotelRating: 3,
       foodList: [
         Food(
           foodId: 12344,
@@ -52,6 +53,7 @@ class Constants {
       hotelName: 'Chiking',
       hotelLocation: 'calicut',
       hotelMobileNumber: 12121212112,
+      hotelRating: 5,
       foodList: [
         Food(
           foodId: 456,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_seat_booking/widgets/text_widget.dart';
 
-class CardWidget extends StatelessWidget {
+class CardWidget extends StatefulWidget {
   String imagePath;
-  String rating;
+  double rating;
   String hotelName;
   String locationName;
   String foodItems;
@@ -16,6 +16,11 @@ class CardWidget extends StatelessWidget {
     required this.foodItems,
   }) : super(key: key);
 
+  @override
+  State<CardWidget> createState() => _CardWidgetState();
+}
+
+class _CardWidgetState extends State<CardWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -36,11 +41,14 @@ class CardWidget extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                imagePath,
-                height: 150,
-                width: 250,
-                fit: BoxFit.fill,
+              child: Hero(
+                tag: widget.hotelName,
+                child: Image.asset(
+                  widget.imagePath,
+                  height: 150,
+                  width: 250,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
             Positioned(
@@ -50,7 +58,7 @@ class CardWidget extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
                     child: TextWidget(
-                      data: hotelName,
+                      data: widget.hotelName,
                       fontColor: Colors.black,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -63,7 +71,7 @@ class CardWidget extends StatelessWidget {
                     children: [
                       Icon(Icons.place),
                       TextWidget(
-                        data: locationName,
+                        data: widget.locationName,
                         fontColor: Colors.black,
                         fontSize: 15,
                       ),
@@ -75,7 +83,7 @@ class CardWidget extends StatelessWidget {
                   Row(
                     children: [
                       TextWidget(
-                        data: '($foodItems)',
+                        data: '(${widget.foodItems})',
                         fontColor: Colors.black,
                         fontSize: 12,
                       ),
@@ -103,7 +111,7 @@ class CardWidget extends StatelessWidget {
                         Icons.star,
                       ),
                       Text(
-                        rating,
+                        "${widget.rating}",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ],
