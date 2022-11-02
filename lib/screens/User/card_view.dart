@@ -10,6 +10,7 @@ class CardView extends StatefulWidget {
 
   @override
   State<CardView> createState() => _CardViewState();
+
 }
 
 class _CardViewState extends State<CardView> {
@@ -32,6 +33,7 @@ class _CardViewState extends State<CardView> {
                     MaterialPageRoute(
                       builder: (context) {
                         return SeatBookingScreen(
+                          foods: ['${Constants.res[index].foodList}'],
                           hotelName: '${Constants.res[index].hotelName}',
                           hotelImage: 'assets/hotel.jpg',
                           ratingCount: Constants.res[index].hotelRating??0,
@@ -44,7 +46,7 @@ class _CardViewState extends State<CardView> {
                   imagePath: 'assets/hotel.jpg',
                   rating: Constants.res[index].hotelRating??0,
                   hotelName: '${Constants.res[index].hotelName}',
-                  foodItems: 'food List',
+                  foodItems: ['${Constants.res[index].foodList}'],
                   locationName: '${Constants.res[index].hotelLocation}',
                 ),
               ),

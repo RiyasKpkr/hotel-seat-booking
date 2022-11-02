@@ -6,7 +6,7 @@ class CardWidget extends StatefulWidget {
   double rating;
   String hotelName;
   String locationName;
-  String foodItems;
+  Map foodItems;
   CardWidget({
     Key? key,
     required this.imagePath,
@@ -83,7 +83,7 @@ class _CardWidgetState extends State<CardWidget> {
                   Row(
                     children: [
                       TextWidget(
-                        data: '(${widget.foodItems})',
+                        data: '${widget.foodItems}',
                         fontColor: Colors.black,
                         fontSize: 12,
                       ),

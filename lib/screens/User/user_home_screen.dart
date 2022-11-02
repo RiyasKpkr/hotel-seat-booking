@@ -8,6 +8,7 @@ import 'package:hotel_seat_booking/models/hotel_model.dart';
 import 'package:hotel_seat_booking/screens/User/card_view.dart';
 import 'package:hotel_seat_booking/widgets/text_widget.dart';
 import 'package:searchfield/searchfield.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class userHomePage extends StatefulWidget {
   const userHomePage({super.key});
@@ -85,7 +86,18 @@ class _userHomePageState extends State<userHomePage> {
                   ),
                 ],
               ),
-              CardView()
+              CardView(),
+              // Container(
+              //   child: SmoothPageIndicator(
+              //     effect: SlideEffect(
+              //       activeDotColor: Colors.red,
+              //       dotWidth: 12,
+              //       dotHeight: 12,
+              //     ),
+              //     controller: controller,
+              //     count: 2,
+              //   ),
+              // ),
             ],
           ),
         ),
